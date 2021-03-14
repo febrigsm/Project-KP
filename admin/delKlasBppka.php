@@ -1,0 +1,10 @@
+<?php
+	include '../koneksi.php';
+	$id = $_GET['id'];
+	$hps = mysql_query("delete from klasifikasi where ID_KLAS=$id");
+	if ($hps) {
+	    header("location:ListKlasBppka.php");
+	} else {
+	    echo "Gagal menghapus, masih ada data terkait <a href=\"javascript:history.back()\">kembali</a>";
+	}
+?>
